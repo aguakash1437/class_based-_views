@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1> Delete selected instance</h1>
+
+
+    <h1>Are Sure To Delete {{dso.scname}}</h1>
+
+
+    <form method="POST">
+        {% csrf_token %}
+
+
+
+        <input type="submit" value="yes-sure-delete">
+
+    </form>
+
+
+
+   <h1><a href="{% url 'Schoollist' %}">No-back-to-listview</a></h1>
+
+   <h1><a href="{% url 'detail' pk=dso.pk %}">No-back-to-detailview</a></h1>
+    
+</center>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        {% if form.instance.pk %}
+            <h1>Update Form</h1>
+        {% else %}
+            <h1>Create Form</h1>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+                {{form.as_p}}
+
+            {% if form.instance.pk %}
+                <input type="submit" value="Update">   #form object with instance means show updateform
+                
+
+
+            {% else %}
+                <input type="submit" value="create">     #form object without instance means show createform
+            {% endif %}
+        </form>
+    </center>
+</body>
+</html>
